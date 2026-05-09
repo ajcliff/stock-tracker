@@ -65,33 +65,46 @@ function Login() {
 /* ---------------- ROUTES ---------------- */
 function AppWrapper() {
   return (
-    <Routes>
-<Route
-  path="/"
-  element={<DailyOperationsPage />}
-/>      
-<Route
-  path="/daily-operations"
-  element={<DailyOperationsPage />}
-/>
+<Routes>
+  <Route path="/" element={<Login />} />
 
-<Route
-  path="/stock-planning"
-  element={<StockPlanningPage />}
-/>
+  <Route
+    path="/owner"
+    element={<OwnerDashboard />}
+  />
 
-<Route
-  path="/transaction-logs"
-  element={<TransactionLogsPage />}
-/>
+  <Route
+    path="/agent"
+    element={<AgentDashboard />}
+  />
 
-<Route
-  path="/monthly-summary"
-  element={<MonthlySummaryPage />}
-/>
-    </Routes>
+  <Route
+    path="/daily-operations"
+    element={<DailyOperationsPage />}
+  />
+
+  <Route
+    path="/stock-planning"
+    element={<StockPlanningPage />}
+  />
+
+  <Route
+    path="/transaction-logs"
+    element={<TransactionLogsPage />}
+  />
+
+  <Route
+    path="/monthly-summary"
+    element={<MonthlySummaryPage />}
+  />
+</Routes>
+
+    
   );
+
+  
 }
+
 
 /* ---------------- APP ROOT ---------------- */
 export default function App() {

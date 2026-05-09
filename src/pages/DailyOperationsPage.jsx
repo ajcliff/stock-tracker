@@ -120,15 +120,7 @@ function totalAllocatedToday(product) {
 }
 
 function debtRemaining() {
-  return Math.max(
-    0,
-    totalAmount() - (
-      (Number(cash) || 0) +
-      (Number(mpesa) || 0) +
-      (Number(currentCash) || 0) +
-      (Number(currentMpesa) || 0)
-    )
-  );
+  return totalAmount() - totalPaid();
 }
 const today =
   new Date().toISOString().split("T")[0];
@@ -279,6 +271,9 @@ setSaving(true);
 
 setAllocated(mergedAllocated);
 setReturns(mergedReturns);
+
+setCash(mergedCash);
+setMpesa(mergedMpesa);
 
 setCurrentAllocated({});
 setCurrentReturns({});
