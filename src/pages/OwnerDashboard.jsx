@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import AppFooter from "../components/AppFooter";
 export default function OwnerDashboard() {
   return (
     <div style={{ padding: 20 }}>
@@ -24,24 +24,7 @@ export default function OwnerDashboard() {
           </Link>
         </li>
       </ul>
-      <div
-  style={{
-    position: "fixed",
-    bottom: 0,
-    left: 0,
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-around",
-    padding: 15,
-    background: "white",
-    borderTop: "1px solid #ddd"
-  }}
->
-  <button>Daily Ops</button>
-  <button>Stock Plan</button>
-  <button>Logs</button>
-  <button>Monthly</button>
-</div>
+<AppFooter />
     </div>
   );
 }
