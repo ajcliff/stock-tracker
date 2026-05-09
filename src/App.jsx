@@ -8,7 +8,6 @@ import AllocationForm from "./components/AllocationForm";
 
 import AgentReturns from "./pages/agent/AgentReturns";
 import AgentDashboard from "./pages/AgentDashboard";
-import OwnerDashboard from "./pages/OwnerDashboard";
 import StockPlanningPage from "./pages/StockPlanningPage";
 import DailyOperationsPage from "./pages/DailyOperationsPage";
 import MonthlySummaryPage from "./pages/MonthlySummaryPage";
@@ -29,11 +28,11 @@ function Login() {
       return;
     }
 
-    if (user.role === "owner") {
-      navigate("/owner");
-    } else {
-      navigate("/agent");
-    }
+if (user.role === "owner") {
+  navigate("/daily-operations");
+} else {
+  navigate("/agent");
+}
   }
 
   return (
@@ -68,10 +67,7 @@ function AppWrapper() {
 <Routes>
   <Route path="/" element={<Login />} />
 
-  <Route
-    path="/owner"
-    element={<OwnerDashboard />}
-  />
+
 
   <Route
     path="/agent"
