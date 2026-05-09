@@ -60,7 +60,9 @@ export default function StockPlanningTable() {
       0
     );
   }
-
+function handleResetDay() {
+  setStock({});
+}
   async function handleSave() {
     await saveStockNeededToday(
       stock
@@ -176,6 +178,9 @@ export default function StockPlanningTable() {
       >
         Save Stock
       </button>
+      <button onClick={handleResetDay}>
+  Reset Day
+</button>
     </div>
   );
 }
